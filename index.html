@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <script defer type="module" src="./script.js"></script>
+    <title>Book Storage</title>
+</head>
+<body>
+    <div class="left">
+        <div class="left-content">
+            <div class="bookCartOuter">
+                <div class="bookCart loanCart">
+                    <!-- <div class="bookImg">
+                        <img src="https://m.media-amazon.com/images/I/91HSzl9bxoL._AC_UF1000,1000_QL80_.jpg" alt="">
+                    </div>
+                    <p class = 'title'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                    <p class = 'author'> By: Angsar Aidarbek </p> -->
+                    <div class="userImg">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBQSEhUSEhUSERUYGBgVFRkRGBIYEhocGBgZGhgcHBkcIy4lHB4rHx4aJjgnKy8xNTU1HCQ7QD00Py40NTEBDAwMEA8QHhISHjQrISQ0MT80NDE0NTQxNDQ6MTE0NDQ0NDE0NDQ0NDExMTExMTQ0PTQ0NDQ0NDQxNDQ0NDQ0P//AABEIAQoAvQMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAAAQIDBAUHBv/EAEkQAAIBAgMEBgQICwcFAQAAAAECAAMRBBIhBTFBYQYTMlFxgSJykaFCUmKCkrGywQcUFSMzY3OTorPSNEODwtHT4SRTlKPw8f/EABkBAQADAQEAAAAAAAAAAAAAAAABAgMEBf/EACYRAQACAgICAgIBBQAAAAAAAAABAgMREjEhQQRREyIyFCNhcZH/2gAMAwEAAhEDEQA/AOcova8fuBgqat4j6hJ0pHXTef8AiDJYt429gF/feUQr1V9FvAx+WTGkSN28ge//AEvGhb39kCFF1bx+4RHS5HMEfVJlWxYcx9QilOyeZ+qBe6M1VWvTDhGSpZHDhSLt2N/HMQPMz2uI6L4ap/dBDvvTLJ7lNj5ieF2JQL1sMq7zUpHyV1Yn2Amdg6qb4o3HljknU+HPcb0HfXqqoI0IWqpvcG9i6/0zzOLwj0nNOopRxwbiO8Hcw5ido6qVsZs2nWXJVRai9zDdzB3g8xLWxRPSK5ZjtxmktwvgIIu8dxP+s6BtHoYEUthSTYaU3sb24K+8H1r37xPKYPCNVqNTpoXct2bWYWVQ2a/Zsd97e2YTSYlrW8TG2WUs3iPq/wD2KEB0JAv3zoWzOhi3FTFZajDciFurHrNoW8NB4z0WG2ZSpi1OnTT1EVfqEvXFM9qzliOnJaGBcgHJUbQH0Uc/UJo4bo7iKpIFJkVgPSq+gBpY6H0t1uE6n1cOrl4wwpOaXPto9GkoYV2djUc5EB7KDM6qSFHIneT5TIpsMqk8QD7RPd9MFy4U+un2r/dPAUF9BfATPJEROoaY5mY3JysAz8d27wld2u53DRfraR/jQBb0SddDcW0AH3So5zEsbXMzaaW8S4VSLjMRYDjKb1WItoBu0EQLFtI2nSLLDLJbQtCW0qhV5AfVEpIQouCCdTfvJv8AfNfEoiotMAXbVj8kan26DzMSm6XuxGUXJvyjajKyZnAHwQWPK+g92aXdmbExFamalOnnFzc56Sm++1mYEWBG+NqKLHTLnYkj4q93jlAHiTPT9B8WOtq0vjIHUc0OVj42ZPoy1Ii1tSi0zEbh5ersavTv1tColydSuZe4eklxutxjaWya9RrU6FV7KQPQZUJJHwmsvDv4zr1otpv+GPtj+afpzzo/0YrUMTh6lREVQW0zhn0puNwFrXI48RPe5JKUFwbC43HiL74tppWsVjUMrWm07lDkhkk1oWl0IckjTCIrtUVEV3tnYKAzZd2Y7zbnLVoWkG0OSGSTWhaBDkhkk1oWkjxf4RsWKeGSmO3UfTkqAkt5Er7ZzMLOxdIei9LGsHd6iMq5UKFbKL3a6kG99O7sieF2x0JxOHBdAMSg1JpAioBrvp6k/NJnNlraZ3DoxWrEaeYtC0USRKV9853QjC33SRaHfJ1UDdFtIEQojxjhTHcI+FoFug+YZ75i3utuHl/rGNWVnyZhpv5ngPKZouNxIvvsSL+NomWW2jTZQHUk3ufIDhLGyse1CulZPSCEhlFvTBFnW/hu527ovR7o5iMajOlemiK2RsxdqgO/VQBoRqPSnvdjdEcLhl7C1n4vWCsfJSMqjwF+ZmtKTPlle1Y8NnC4lKtNalNgyOMykf8A2h4W4ScRlGilNctNVReAQBV136CPnU5SQiwkoJFOmp0HG+6VlrPUJWiA1iQ1R79UpG8C2rsDwFhvuQdJZTZiaGpeu2+9SxQH5KdlfG1+ZmVstat6YLW89QqjH0zojGp+yV6ntyA2848VKjdmjU5Go1NB7MxYeyagEJjOefTevxqx2y7YjjSp/Nqkn3oB74jYhl/SUqqDvCh1/wDWWI8SBNWEiM1kz8enpn0aqOMyMrjddSCL92nGOkmJwCVDn1R92enZX5X4MOTAjlKgqPTYJVtqbI6gim5+KQew/K5B4HgNqZYt4lhkw2r5jzCeLCE2c7xXSzoiajNicKoznWpT0Gc/GQnQN3g6Hfob38HUQoxR1ZHGjK4KsPEHUTuE8N0+2tRP/TqlOrVHbd0VjSBHZUnc59w5kTmy469ujFe3Tw0IARZyukkIsIFbIe4w6s9xluJJ2lPsLalXB1etpjNcZXRjZXXfYngQdQeGveQer7E2zTxlPPTzKQbOj2zoe423juI3+2chntuhGwXscRUZ0R1yqinKai3uGc7wvcBa4J4Gx3w2tvXphmiut+3uKdVWvlYNYlTY3sRvHjHxEQKAqgKoFgFAAA7gBuizrcglZEOIJ1K0QbEi4aoRoQDwQHeR2t27tGIBqOKKkjMM1QqbFUvawI3Mx9EcgxGomoihQFUBQAAANAANwA7pz5smv1h1YMW/2kKgUBVAUAAAAAAAbgBwEdCE5XYIQhAIQhAIytSV1KOAysLEHcRHwgZNEtTc0ahzEDMjHe6Xtr8tSQD33U8bCwxsLnhrHbSoF0zILuhzpzIGq+DLdfO/CVqtQPRZ0N1ZCynkVuJ2Yr8q+e4cObHxt46lz/bHTerV9HC3o0zucgGqw7xfRB7TzG6eVt57yb6kk6kk8TeMo9lfAfVJJy3vNp8t60iseCQiwlFiQiwhJbQjrQtAfhaipURqiCsgN2QtlDcibHTlx3brzpuyOlWHxBWmC1KodAlQWueAVh6J8L35Tl9pb2Rb8aw1/wDv0f5i2muO8xOoZZKRaNuxwhK+PcrTfKbORkQn47+in8RE7ZccRudJtkrmRqu81GLD1B6NO3IqM3i5l+MpUwiqiiyqAqjkBYe6QbRxBp0yy5cxZEBfsAu4QM3IXvbS+7S84JnlZ6kRFa/6WotpkHBg/pHqueJLuq/QQhR7In5PpfEHjdr+295rGCfthPyY+mvCZIwluw9ameTs4+i+ZfdJBUrruanVHc4KN5ulx/BInDaE1+RWe2lCUBtEjt0aq80yOvllOb2qIHaV/wBHSrOflKEUeJcg28AZThb6afkp9r8JmMa79p1pD4tEBm83cG/kojPxFD2jUf16lVh7C1vdLxhtPbO3yKx15a1pjBcgr0+ClnX1HBceQbOvzY/8nUviL75n7VoChTerTLi6ZHVndlKnMFsGJylWa+nAtytpXHNfO2V80XjWnI6HYX1R9UkiILAeAizlbiEISEiEIQJLQtFhaAklwb5atJzuWpTc/NdW+6R2javZbwP1SY7RPTtxlfEDM9FLXBqBm5BFaoD9NU9smRrqD3gH2iMoi+IX5FN7jm7oAfYjTuyTqkuPFG7xDSjXQMCGAIIsQbEEcbjujpSxS9bU6n4AAerv9IEkIngbMW5ADc04XooqGAw9Rc9PrAnDq6ldKZtxVVYKRzAsZJ+SqffW/f4r+uXoSeU/aOFfpROzrdirWTkWVx/GCffIaiVqYuxo1BcC9zSa5NgBcsGJNhvWakZVpq6lHAZWBDA6gg7wZeuS0e1LYqz6ZpxVtHp1qZ9RnH0qeYe0xr7QUAnLUIAJP5uoFAG8lmAVRzJEuYB2Gak5LMhADHeyMLox7za6k8SjGMdetqlW1SllJHBqhAYXHEKuVhzYH4Il/wA1mf8ATV+1eg9aqoZEWkrag1ixqcj1a2+2JOuzmP6StUbvCBETysCw+lL8JSctp9r1w1j0o/kqn+uPjXxP9cydv4OlTpizPn1yrUq1XuGRqZsrsRoXB03T0kr47CJWpmnUF1OoI0ZSNzKeDDgZWLTvteaV14hwhDcA8hHS3tTZzYWs+HfUobA7gykAow8VI8DccJVtKKmwiwgJCLCBNaFo+FoDLRrrcEcjJYlpI6/s2pnoUn+NTRvagMlwK/n6rfIpJ5g1GP2xKPRxr4PDH9RS+wsvbK7eIP60AeAo0vvJnXln9HLhj+5/1oyls0hutcb2quD8w9UPDRPfLgkGAwFFlrg0KVWqjuy51QO3WXqL6ViQCzMt/knunLEbdtp0niznvQbBbSxGOY4ynicNhQtRsjGogJLXRAwIbTPoRwQCdL/IND9f/wCTi/65birzVoS1+RKP679/if64n5Cofr//ACMV/XHE5wym0xKfLpPf/DdMv22hszVXbiata/zajIPcoj6+Cp08UopqQVotmJZmJ6x1y6sSf7tvbDZmzqLvXRg4YPnGSpVQlagzAnIw+GHHzZGvSeXjazCc46B47aGJ2hVwuK6xadLM1UFqyuly3VqCWBsbixsSQo7yZ1D8iJ8ev+8eTxRzhWhLP5FTi9c/4j/dF/IdDeRVPrVsQV+iWt7o4nOHKvwl0gMVSYDVqVm+a7W+0Z5C09P+EKrSOOanQVEWki02KKBme5drkb7BlF+8ETzFpSe0b2S0SOhIDYRbQtAs2haPtEywGWhaPtEtA6l0cH/R4b9hS+ws0dmD9Lzqn7CD7pndG/7Hhv2NMexAJo7M/vf2jfYSdWX+EOfB/OV0Sri1qoeuwxQVQAjK4LI65rlSAy+kPSym+hY30JloRZzROnZMbRYfbVZ75RQdh2lY1KdRT3MhDEf/AFrycbUxH/Zofv3/ANqMyi97C9rX427r90JblKvGDztTEf8AZofv3/2pTxG269yiCh1vBE6yqRzfVAq8zblc6SzBVA3AC5ubd53mOUnGEGDosoLVXFSqxzVHAyqTYABV+CoAAA5XNySZHjqL6VKLNTqJpder9NCQWQ51I1sCDbQjuJvckdektRGptqrKVbwYWMja2vGkOGx9ZgTSq0jY2cVaDdYrADRgtRbG1uG61tLS1+N4n4+H/dVP9yVtn1WekjP27ZX9dfRf+IGWZPKUcYMOKxXGrhwPk0XB9pqke6Ym2tqVvxetUo16lXLTd8y9WuHXKpOjqoZzpuVjzIm9MnpY1sBiv2Lj2qRHKTjDjmvEsxNySxJYk6kknUknUmFo60LSihloR1oWgNhFtC0C7aJaSWhaBHaWtlYBsTXSipy5z6TfFUAszeNgbcyJBab/AEF/to/ZVPrT/mIIe3pbBw9OmKdNOrKgBKi61VtuOc6nwOh3WtpGdH65cV8wAdaxRwNwZadPNblfUciJryvhsGtN6rre9VxUe9rZgiJp5IvneX5TrS/GN7WIQhKpEIQgEIQgVcTUKVKTXORi1NhwuwBRj5rl+fLUhxdDrEZL5SR6LcVYG6MOYYA+UTB4jrEDEZWF1dfiuujL7dx4gg8YEWzhYVF7qr/xHrP80uSns43V3+NVcjwVsg+zeXIBKW1f0du96Q9tVBLsqbS7KDvq0vdUU/dA8B062ImHqJXpKESqSrqOyr2zXA4BgGNu9T3zylp0v8IjgYNAd7VUC+IVyfcDObWiVLG2haOtC0hCO0LR9oWgXbRLSW0S0CO00ej2KFLGUKjGy58jHk6lBflmKnylEiNZbix1B0MDs8Jz/ZfTKrTRadVBXCiwcPlqWG7MCCGPO48982tn9MKdaqlLqqlMu2UMxplQbEi9jfUi3iRJabh6aEIQCEIQCEIQCVa+CDMXV6lJjYOaZX0gN1wwIv8AKAB5y0Tbfp4yM1k+On0hAWjTVFVEGVVAVR3ACwj4xaqncynwIj4BM/a+ISn1T1HVEFW7M5AUBadRtSfVmhPHfhIb8xQXvrZvo03H+YQS830q23+OVRkuKKAhL3BYtbM5HC9gADqAOZAwyI60LSGcm2haPjbQGxI60LQNG0S0WJICERCIsJIZaKrshDp20Kul92ZCGX3gQhA6/hcQtSmlRDdXVXXwYXElnkug20c1N8Ox9JCXS/FHN/4WuOQKz1V5LSD7ykHrvqqpRHDrLu9uaIwC/SPhwlm8LwK4wjE3etVbkvVovllXN/FBdm0+PWP69Ss49jMRLF4XgVhsrDg36ijfvyU7+20nGEpjdTpjwRP9I68LwI3wVJtDTpnxRD90iGzKI7CCl+xLU/sEX85ZvC8BMOjKCGcvr6JYKGt3MRoTe+thpbxPiPwiV71KFMfBR3b57Kq/Yae4vOU9IcaK+Lq1Bqt8iH5KejpyLZm+dCLdMyBixCJChIQhAIQiQNCJFMSQEMQxTEgJaEIQJ8Bi3oVEq09WQ6jgyntIfEewgHhOn4PFpWprUpnMji4PHmCOBBuCOBE5TNTYO2Wwj2N3pMbuo1ZT8dB3944+I1mJWiXSLwvIMPiUqIKlNg6MLgrqDH3llkl4Xkd4XgSXheR3heBJeF5HeUNr7Xp4WnnqG7G4RFtnc9w5d53CBV6W7Y/F6JRDarUuiW3qPhv5A6cyJzcLYWGgGglrH4x69RqtQ3ZtLDsqo3KvIXPiSTxlaVlSZ2SEWJCCQhCAkIQgX4kWJIAYkUxJISEIQEiRYkC1s/aNXDsWpNYE3dG1pt4rwPMWOg3jSe7we1s1NKlVDRzor3vmpekobtgejv8AhBfOeDwGBeu7IpCBELuxGaw4AC4uTY29UzoWAXLSpr3Ig9igS2piNymtomZj6WlcEAggg7iDcHzi3lF8DTJJC5CdSaTMjHxKEX84HCtwrVgP8M+9kJhdeDSDF42nSXNVdKY73YLfwvvPhK/4oD26lZ/nlPsZbzye29iAHE4imTdHGZCARkFNCxU7wRctre9juvJisz0ra0Vjcr+0umA1XDIWPx6gKoPBO03nl855OvWeo5qVHao53s2/TcBbQDkLCRwldo3spiQhIQSJFtEgJCESAQhCBfiQiSApjYt45EZ2VEUu7kKijeSeH334AE8I0I2YDfp4+6auB6O4qsLrTyKdzVyUH0bF/wCGev2B0dp4YCo9qlfi51VOSA9kc959gG9mmsU+0beMw/QVv7zEKOVNDf6TN/llyl0Gw4N2q4l+RNJV9yX989PmlbaFcpTYp22siaX9NyFU27gTc8gZPGEbef2VgadJaqoDlapUBzEsbIxpgXPJb+ZlnZ1Q5OrY+nTsjX3kAeg/zlsfG44SLC0VpZ6K7kdgL9z2qL46Pa/IxcRSJIemQrroL9lhxVuXPeDr3g9FqcqRpy0y8Mk76lezQzSlRxykhHBpudyvub1G3P5a94EtXnLMTHbvi0TG4PzTNwJL1MSzWKNUyIO/Ii03J+cGX5vOPxGIZy1OloRo76ZU5D4z8tw49xlo01pqqLoqgKOOg58TN8NJ3uXH8nJGuMKWz+iOFqURpVpuuamzI7E3Qlc2V8yi4AbdxlfFdAiP0OIvyrILn56Wt9Gb+wq4LYhOK1QbHualTsRyuGHiDNbNKWrG5aUmZrEuVY/o9iqAvUpFlG9qJ6xPYBmHiVEyVYEXBBHeN07Xmnn9v9GaWJBqUwtKvvDqLK57nUdr1t49xpNfpptzWIY+rTZGZHBV1JVlO8EGxH/PGRzNIiRYl4BCEQwL8SESQCeg6EUM2Jeof7tNPWdrA/RVx86efvPZdB6VqNSp8d7A/JRQPtF5eseUS9XmhmkWaGaaqpc0pVGz10XhTU1D6z5kT+HrL+KyxmlPZ7Zg9T47sR6qfm0tyIUN86BBtWnkqJU+C4FN+TAkofO7L4lJHmljbuuFr8CKbsCN4KqSpHMEAjwmZhsQWur2Dpo4Gg5MPktvHmN4M3xW8acmavnZ1Zw79UVDrkzvfhrZPMkNrwyxlPFNTp1M13alm1O9wFzIeZIIBPeDGYRrtUfvcqPBAEI+kHPnK+Pv1qKAbVcqMRuHVMagv4rnHsk5KbgxX4yui9GkLDPkAL/Gbi7c2PpNzMsq9wCNQdRbnI80zhW6sNRBAbMiUb91U5U8lbMPBJfqGURyn/LV2d6AStwd3R+7K7kUm9qqB+0M3c0pHCp1XU6hMgQW3gAWBB4EaG8MDiC6enbOpKPb4y7zbgCLMOTCcszuXfEajS7mhmkWaGaQlznpnh8mNdraVESp55ch+wD5zCnsPwgUdcPU9emfMB1+y/tnjplbtaBCEJVIjbxY2BehG3heAt50Lo1T6vCURuumc+Lk1D72nO3QsMi9prIvixyj3kTqKAKAo0AAA8BoJpSESnvC8izQzS6pmOrlKbsts2WyX3Z29FB9IiSUEFNFRdyqFHgosJTxpzNSTfdwx5BAXB+kE9st5oFfbOuGrj9VU+w0yq9LPZlJRx2WAB37wR8JT3fUdZq7Q1o1R3o49qmZdN7qDyH1TbF7c+f0dQQIioLkKANd5txPMyLEN6dL12H/AK3/ANJJmlbFN6dH1z/KqTaXNHa8DKuNpqclQgFkdMp4gGoha3jlElzSLFt+bY91j7CD90i3Upp4tD0t5Tqt1dVX+C9kfuDjsN56p5pJy0jxFMVEZGvZha43juI7iDqOYnI9BZvC8p4KuXT0tHUlHA3Zl0JHI6MOTCT5oGN0zpZ8GzcUdH/iCt/CxnPLzqO1aHW0KtP46Oo8SpA985Yj3APeAfbKWhaD4kI28zSIQiQLd4XgYQLux6efE0V4Zwx+YC496idDzTwvRf8Ata+o/wBaT281r0rJ+aVsdXKUqjr2lRmW/eFOX32k0rY/9G3zftCWQVTmrk78iBL/ACnIZh7EQ/OlvNKOD7Vf9of5aS3ATEao471Ye4zFwzXpofkr9Qmy+4+BmDgv0VP1E+yJri9ufP6Wc0rYpvTo/tD/ACqkmlfFduj+0P8AKqTaXPC3mkGNb8257kY+wGSSvtD9DV9R/smJ6I7elLQzSOLOR6CszZKwPwagyn10BKnxKZh8xZJVrEVKajc2e/kAR98h2l2F/aUf5iRcR+lo+L/YgXc05XiqXV1KlP4jug8FchfdadRnN9vf2zEeuPsJK26TCheF4hhM1i3iQiQP/9k=" alt="">
+                    </div>
+                    <p class="userName">Angsar Aidarbek</p>
+                    <p class="userPhone">+77712527546</p>
+                    <button class="userValidity" disabled>Valid</button>
+                </div>
+                <div class="bookCartLine"></div>
+                <div class="booksInLoan">
+                    <div class="loans">
+                        <div class="userBookCart ">
+                            <div class="userBookImg">
+                                <img src="https://m.media-amazon.com/images/I/91HSzl9bxoL._AC_UF1000,1000_QL80_.jpg" alt="">
+                            </div>
+                            <p class = 'title'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                            <p class = 'author'> By: Angsar Aidarbek </p>
+                        </div>
+                        <div class="userBookCart ">
+                            <!-- <div class="bookImg">
+                                <img class="bookImg" src="https://m.media-amazon.com/images/I/91HSzl9bxoL._AC_UF1000,1000_QL80_.jpg" alt="">
+                            </div>
+                            <p class = 'title'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                            <p class = 'author'> By: Angsar Aidarbek </p> -->
+                        </div>
+                        <div class="userBookCart ">
+                            <!-- <div class="bookImg">
+                                <img class="bookImg" src="https://m.media-amazon.com/images/I/91HSzl9bxoL._AC_UF1000,1000_QL80_.jpg" alt="">
+                            </div>
+                            <p class = 'title'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                            <p class = 'author'> By: Angsar Aidarbek </p> -->
+                        </div>
+                        <div class="userBookCart ">
+                            <!-- <div class="bookImg">
+                                <img class="bookImg" src="https://m.media-amazon.com/images/I/91HSzl9bxoL._AC_UF1000,1000_QL80_.jpg" alt="">
+                            </div>
+                            <p class = 'title'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                            <p class = 'author'> By: Angsar Aidarbek </p> -->
+                        </div>
+                        <div class="userBookCart ">
+                            <!-- <div class="bookImg">
+                                <img class="bookImg" src="https://m.media-amazon.com/images/I/91HSzl9bxoL._AC_UF1000,1000_QL80_.jpg" alt="">
+                            </div>
+                            <p class = 'title'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                            <p class = 'author'> By: Angsar Aidarbek </p> -->
+                        </div>
+                    </div>
+                    <div class="paging">
+                        <button>inLoan</button>
+                        <p>History:</p>
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="verticalLine"></div>
+    <div class="right">
+        <div class="right-content">
+            <div class="adminPanel">
+                <div class="profile">
+                    <div class="imgAdmin"></div>
+                    <p class="name">Profile</p>
+                    <p class="role">Admin</p>
+                </div>
+                <ul class="pages">  
+                    <button class="active bookPage">
+                        <div class="stateIcon bookPage">
+
+                        </div>
+                        Books
+                    </button>
+                    <button class="userPage">
+                        <div class="stateIcon userPage">
+
+                        </div>
+                        Users
+                    </button class="loansPage">
+                    <button>
+                        <div class="stateIcon loansPage">
+
+                        </div>
+                        Loans
+                    </button>
+                </ul>
+            </div>
+            <div class="cart">
+                <!-- loansMain -->
+                <div class="mainCart loansMain">
+                    <div class="zeroTopCart">
+                        <div class="dates">
+                            <label for="startDate">Start:</label>
+                            <input type="date" id="startDate" name="startDate">
+                        </div>
+                        <div class="lineH">
+                            <i class="arrow rightA"></i>
+                        </div>
+                        <div class="dates">
+                            <label for="startDate">End:</label>
+                            <input type="date" id="startDate" name="startDate">
+                        </div>
+                    </div>
+                    <div class="topCart">
+                        <div class="closure">
+                            <!-- circle -->
+                            <div class="search circle">
+                                <svg width="30%" height="30%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 21H9C6.17157 21 4.75736 21 3.87868 20.1213C3 19.2426 3 17.8284 3 15M21 15C21 17.8284 21 19.2426 20.1213 20.1213C19.8215 20.4211 19.4594 20.6186 19 20.7487" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 16V3M12 3L16 7.375M12 3L8 7.375" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <!-- userCaption1 -->
+                        <div class="caption1 loanCaption1">
+                            <!-- <label for="title" class="label1">title:</label>
+                            <textarea name="" id="" cols="30" rows="10" type="text" class="title" id="title"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </textarea>
+                            <label for="author" class="label2">author:</label>
+                            <input type="text" class="author" id="author" value = "Lorem Ipsum is simply dummy text of "> 
+                            <label for="year" class="label3">year:</label>
+                            <input type="number" class="year" id="year" value = "2024">
+                            <label for="year" class="label4">totalLoans:</label>
+                            <input type="number" class="totalLoans" id="totalLoans" value = "50"> -->
+
+
+                            <!-- <label for="name" class="labelFamily">name:</label>
+                            <input type="text" class="miniLabel1" id="name" value = "Lorem Ipsum is simply dummy text of "> -->
+                            <!-- <label for="phone" class="labelFamily">phone:</label>
+                            <input type="text" class="miniLabel1" id="phone" value = "Lorem Ipsum is simply dummy text of "> -->
+
+
+
+                            <!-- <label for="email" class="labelFamily">email:</label>
+                            <input type="text" class="miniLabel1" id="email" value = "Lorem Ipsum is simply dummy text of "> -->
+
+                            <div class="userSelection">
+                                <label for="cars">Choose a user:</label>
+                                <select name="cars" class="loanLabel" id="cars" form="carform"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="middleCart"></div>
+                    <!-- Loans -->
+                    <div class="bottomCart Loans">
+                        <!-- LoansCaption2 -->
+                        <div class="caption2 LoansCaption2">
+                            <!-- <div class="secondLabel">
+                                <label for="amount">amount:</label>
+                                <input type="number" class="amount" id="amount">
+                            </div>
+                            <div class="secondLabel">
+                                <label for="inUse">inUse:</label>
+                                <input type="number" class="inUse" id="inUse">
+                            </div>
+                            <div class="secondLabel">
+                                <label for="available">available:</label>
+                                <input type="number" class="available" id="available">
+                            </div>
+                            <div class="secondLabel">
+                                <label for="stars">stars:</label>
+                                <input type="number" class="stars" id="stars" max="5" min="1">
+                            </div> -->
+
+
+                            <!-- <div class="userContent" id="">Total books reserved:<br><input class="reserved" value="3"></div>
+                            <div class="userContent" id="">Total books in use:<br><input class="inUse" value="3"></div> -->
+
+
+                            <div class="titleSelection">
+                                <label for="cars">Choose a user:</label>
+                                <select name="cars" class="loanLabel" id="cars" form="carform"></select>
+                            </div>
+
+                            <!-- miniTextUser -->
+                            <div class="miniText miniTextUser">
+                                <!-- <p>1 star: bad</p><br>
+                                <p>2 stars: normal</p><br>
+                                <p>3 stars: good</p><br>
+                                <p>4 stars: affected thinking</p><br>
+                                <p>5 stars: must to read</p><br> -->
+
+
+                                <!-- <p>Total reserved = in Use + reserved in Past</p><br>   
+                                <p>More than 3 problems, raises concerns about user’s validity</p><br> -->
+
+                                <p>Max 5 books inUse</p><br>   
+                                <p>Booking range 2 weeks</p><br>
+                            </div>  
+                        </div>
+                        <!-- <div class="caption3">
+                            <div class="validity">Valid</div>
+                            <p>Problems:</p>
+                            <textarea class = 'comments usered' id=""></textarea>
+                        </div> -->
+                        <div class="closure">
+                            <div class="search">
+                                <svg width="30%" height="30%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 21H9C6.17157 21 4.75736 21 3.87868 20.1213C3 19.2426 3 17.8284 3 15M21 15C21 17.8284 21 19.2426 20.1213 20.1213C19.8215 20.4211 19.4594 20.6186 19 20.7487" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 16V3M12 3L16 7.375M12 3L8 7.375" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="horizontalLine"></div>
+                <div class="cartSettings">
+                    <!-- <button id="add" class="addB">
+                        <svg class="addB" width="80%" height="80%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.5 3H12H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H11M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19M19 8.625V11.8125" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 15V18M17 21V18M17 18H14M17 18H20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <p class="addB">add</p>
+                    </button>
+                    <button id="save" class="saveB" disabled>
+                        <svg class="saveB" width="80%" height="80%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.1716 1C18.702 1 19.2107 1.21071 19.5858 1.58579L22.4142 4.41421C22.7893 4.78929 23 5.29799 23 5.82843V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H18.1716ZM4 3C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21L5 21L5 15C5 13.3431 6.34315 12 8 12L16 12C17.6569 12 19 13.3431 19 15V21H20C20.5523 21 21 20.5523 21 20V6.82843C21 6.29799 20.7893 5.78929 20.4142 5.41421L18.5858 3.58579C18.2107 3.21071 17.702 3 17.1716 3H17V5C17 6.65685 15.6569 8 14 8H10C8.34315 8 7 6.65685 7 5V3H4ZM17 21V15C17 14.4477 16.5523 14 16 14L8 14C7.44772 14 7 14.4477 7 15L7 21L17 21ZM9 3H15V5C15 5.55228 14.5523 6 14 6H10C9.44772 6 9 5.55228 9 5V3Z" fill="#0F0F0F"/>
+                        </svg>
+                        <p class="saveB">save</p>
+                    </button>
+                    <button id="delete" class="deleteB" disabled>
+                        <svg class="deleteB" width="80%" height="80%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 11V17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 11V17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 7H20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 7H12H18V18C18 19.6569 16.6569 21 15 21H9C7.34315 21 6 19.6569 6 18V7Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <p class="deleteB">delete</p>
+                    </button> -->
+                    <button>
+                        <svg width="80%" height="80%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C21.5093 4.43821 21.8356 5.80655 21.9449 8" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <p>createLoan</p>
+                    </button>
+                    <button>
+                        <svg width="80%" height="80%" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path fill="none" stroke="#000000" stroke-width="2" d="M9,4 L4,9 L9,14 M18,19 L18,9 L5,9" transform="matrix(1 0 0 -1 0 23)"/>
+                        </svg>
+                        <p>closeLoan</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
