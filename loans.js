@@ -362,7 +362,7 @@ export default class Loan{
             select.classList.add('loanLabel1');
             select.setAttribute('id', 'userId');
             select.innerHTML = `
-                <option disabled value="-1{|}{|}" ${user ? 'selected' : null} >select option</option>
+                <option disabled value="-1{|}{|}" ${!user ? 'selected' : null} >select option</option>
                 ${selectOptions('users', true, user)}
             `
             select.addEventListener('change', (e) => {
