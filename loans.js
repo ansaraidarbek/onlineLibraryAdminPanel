@@ -315,10 +315,10 @@ export default class Loan{
             
         }
 
-        const selectOptions = (obj, isUser) => {
+        const selectOptions = (obj, isUser, user) => {
             let str = '';
             this.storage[obj].forEach(el => {
-                str += `<option value="${el.id}{|}${el.isBefore}{|}${el.search}">${isUser ? el.name : el.title}</option>`
+                str += `<option value="${el.id}{|}${el.isBefore}{|}${el.search}" ${user && user.id === el.id ? 'selected' : null}>${isUser ? el.name : el.title}</option>`
             });
             return str;
         }
@@ -361,15 +361,10 @@ export default class Loan{
             const select = document.createElement('select');
             select.classList.add('loanLabel1');
             select.setAttribute('id', 'userId');
-            if (!user) {
-                select.innerHTML = `
-                <option disabled value="-1{|}{|}" selected >select option</option>
-                ${selectOptions('users', true)}
+            select.innerHTML = `
+                <option disabled value="-1{|}{|}" ${user ? 'selected' : null} >select option</option>
+                ${selectOptions('users', true, user)}
             `
-            } else {
-                select.innerHTML = `
-                <option disabled value="${user.id}{|}${user.isBefore}{|}${user.search}" selected >${user.name}</option>`
-            }
             select.addEventListener('change', (e) => {
                 e.preventDefault();
                 const val = select.value.split('{|}');
